@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "~//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-mapping>
     <class name="entity.Employee" table="EMPLOYEE">
         <id name="id" type="java.lang.Long">
@@ -14,7 +14,7 @@
             <column name="LAST_NAME" length="255" not-null="true" />
         </property>
         <property name="birthday" type="java.sql.Date">
-            <column name="LAST_NAME" not-null="true" />
+            <column name="BIRTHDAY" not-null="true" />
         </property>
         <many-to-one name="address" class="entity.Address"
             column="ADDRESS_ID" not-null="true"

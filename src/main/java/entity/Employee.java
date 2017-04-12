@@ -28,7 +28,7 @@ public class Employee {
 
     public Employee() {}
 
-    /**
+     /**
      * Getter for property 'id'.
      *
      * @return Value for property 'id'.
@@ -99,6 +99,23 @@ public class Employee {
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
+    }
+
 
 /*
     @Override

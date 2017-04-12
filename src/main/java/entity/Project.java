@@ -55,7 +55,15 @@ public class Project {
         this.title = title;
     }
 
-    @Override
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
+    }
+
+    /*    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -71,7 +79,7 @@ public class Project {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + (title != null ? title.hashCode() : 0);
         return result;
-    }
+    }*/
 
     @Override
     public String toString() {
