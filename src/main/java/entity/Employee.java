@@ -1,16 +1,30 @@
 package entity;
 
 import java.sql.Date;
+import java.util.Set;
+
 /**
  * Created by user on 4/8/2017.
  */
 public class Employee {
 
     private long id;
-    private long addressId;
     private String firstName;
     private String lastName;
     private Date birthday;
+
+    /**
+     * For correct work Hibernate framework,
+     * need determinate object, with class Employee bind
+     */
+    private Address address;
+
+	/**
+	 * Need for bind with class "Project"
+     * will be
+     * unique object Project <= bind => unique object Employee
+     */
+    private Set<Project> projects;
 
     public Employee() {}
 
@@ -32,25 +46,7 @@ public class Employee {
         this.id = id;
     }
 
-    /**
-     * Getter for property 'addressId'.
-     *
-     * @return Value for property 'addressId'.
-     */
-    public long getAddressId() {
-        return addressId;
-    }
-
-    /**
-     * Setter for property 'addressId'.
-     *
-     * @param addressId Value to set for property 'addressId'.
-     */
-    public void setAddressId(long addressId) {
-        this.addressId = addressId;
-    }
-
-    /**
+     /**
      * Getter for property 'firstName'.
      *
      * @return Value for property 'firstName'.
@@ -104,6 +100,7 @@ public class Employee {
         this.birthday = birthday;
     }
 
+/*
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -112,7 +109,6 @@ public class Employee {
         Employee employee = (Employee) o;
 
         if (id != employee.id) return false;
-        if (addressId != employee.addressId) return false;
         if (firstName != null ? !firstName.equals(employee.firstName) : employee.firstName != null) return false;
         if (lastName != null ? !lastName.equals(employee.lastName) : employee.lastName != null) return false;
         return birthday != null ? birthday.equals(employee.birthday) : employee.birthday == null;
@@ -121,18 +117,17 @@ public class Employee {
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (int) (addressId ^ (addressId >>> 32));
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 31 * result + (birthday != null ? birthday.hashCode() : 0);
         return result;
     }
+*/
 
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", addressId=" + addressId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthday=" + birthday +

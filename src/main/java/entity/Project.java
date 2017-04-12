@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Set;
+
 /**
  * Created by user on 4/8/2017.
  */
@@ -7,6 +9,13 @@ public class Project {
 
     private long id;
     private String title;
+
+    /**
+     * Need for bind with class "Employee"
+     * will be
+     * unique object Project <= bind => unique object Employee
+     */
+    private Set<Employee> employees;
 
     public Project() {};
 

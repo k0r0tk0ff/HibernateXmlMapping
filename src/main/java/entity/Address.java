@@ -104,7 +104,7 @@ public class Address {
         this.postcode = postcode;
     }
 
-    @Override
+/*    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -126,7 +126,7 @@ public class Address {
         result = 31 * result + (street != null ? street.hashCode() : 0);
         result = 31 * result + (postcode != null ? postcode.hashCode() : 0);
         return result;
-    }
+    }*/
 
     @Override
     public String toString() {
